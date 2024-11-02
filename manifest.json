@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Hover Explain with ChatGPT",
+  "version": "1.0",
+  "description": "Hover over text to get an explanation via ChatGPT API.",
+  "permissions": ["activeTab", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "src/images/icon.jpg",
+      "48": "src/images/icon.jpg",
+      "128": "src/images/icon.jpg"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
